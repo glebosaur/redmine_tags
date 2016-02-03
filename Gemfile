@@ -1,1 +1,2 @@
-gem "redmine_acts_as_taggable_on", '~> 1.0'
+gem "redmine_acts_as_taggable_on", git: 'https://github.com/glebosaur/redmine_acts_as_taggable_on.git', tag:'v1.0.2'
+gem "acts-as-taggable-on", git: 'https://github.com/glebosaur/acts-as-taggable-on.git', tag:'v2.4.1-fdb'
