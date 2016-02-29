@@ -17,7 +17,7 @@
 		tagSource: function(search, showChoices) {
 		  var that = this;
 		  $.ajax({
-			url: '#{url_for(:controller => 'auto_completes', :action => 'issue_tags', :project_id => issue.project.id)}',
+			url: '#{url_for(:controller => 'auto_completes', :action => 'issue_tags', :project_id => issue.project.get_root_project.id)}',
 			data: {q: search.term},
 			success: function(choices) {
 			  showChoices(that._subtractArray(jQuery.parseJSON(choices), that.assignedTags()));
