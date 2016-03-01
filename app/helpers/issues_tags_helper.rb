@@ -4,7 +4,7 @@ module IssuesTagsHelper
       @sidebar_tags = []
       if :none != RedmineTags.settings[:issues_sidebar].to_sym
         @sidebar_tags = Issue.available_tags({
-          :project => @project.get_root_project,
+          :project => @project.present? ? @project.get_root_project : @project,
           :open_only => (RedmineTags.settings[:issues_open_only].to_i == 1)
         })
       end

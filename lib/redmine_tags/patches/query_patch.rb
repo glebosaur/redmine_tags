@@ -76,7 +76,7 @@ module RedmineTags
               :name   => l(:tags),
               :type   => :list_optional,
               :order  => 6,
-              :values => Issue.available_tags(:project => project.get_root_project).collect{ |t| [t.name, t.name] }
+              :values => Issue.available_tags(:project => project.present? ? project.get_root_project : project).collect{ |t| [t.name, t.name] }
             }})
           end
           @available_filters
